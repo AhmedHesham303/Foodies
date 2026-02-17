@@ -9,7 +9,7 @@ function MainHeader() {
       <MainHeaderBackground />
       <header className={classes.header}>
         <Link href={"/"} className={classes.logo}>
-          <Image src={LogoImg.src} alt="logo image" priority />
+          <Image src={LogoImg} alt="logo image" priority />
           NextLevel food
         </Link>
         <nav className={classes.nav}>
