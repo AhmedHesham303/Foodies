@@ -1,18 +1,20 @@
 import Image from "next/image";
-import classes from "./page.moodule.css";
+import classes from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
-function MealsDetailsPage({ params }) {
-  const meal = getMeal(params.mealSlug);
+async function MealsDetailsPage({ params }) {
+  const { mealSlug } = params;
+  const meal = await getMeal(mealSlug);
   if (!meal) {
     notFound();
   }
+  console.log(meal);
   meal.instructions = meal.instructions.replace(/\n/g, "<br />");
   return (
     <>
-      <haeder className={classes.header}>
+      <header className={classes.header}>
         <div className={classes.image}>
-          <Image fill src={meal.Image} alt={meal.title} />
+          <Image fill src={meal.image} alt={meal.title} />
         </div>
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
@@ -21,7 +23,7 @@ function MealsDetailsPage({ params }) {
           </p>
           <p className={classes.summary}>{meal.summary}</p>
         </div>
-      </haeder>
+      </header>
       <main className={classes.main}>
         <p
           className={classes.instructions}
