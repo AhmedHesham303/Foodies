@@ -5,11 +5,15 @@ function ImagePicker({ label, name }) {
       <label htmlFor={name}>{label}</label>
       <div className={classes.controls}>
         <input
+          className={classes.input}
           id={name}
           type="file"
           accept="image/png, image/jpeg"
           name={name}
         />
+        <button className={classes.button} type="button">
+          Pick an Image
+        </button>
       </div>
     </div>
   );
