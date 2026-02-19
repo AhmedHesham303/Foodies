@@ -27,7 +27,7 @@ function ImagePicker({ label, name }) {
 
   return (
     <div className={classes.picker}>
-      {/* <label htmlFor={name}>{label}</label> */}
+      <label htmlFor={name}>{label}</label>
       <div className={classes.controls}>
         <div className={classes.preview}>
           {!pickedImage && <p>No Image Picked yet</p>}
@@ -41,6 +41,7 @@ function ImagePicker({ label, name }) {
           name={name}
           ref={imageInput}
           onChange={handleImageChange}
+          required
         />
         <button
           className={classes.button}
