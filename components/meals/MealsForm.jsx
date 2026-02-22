@@ -5,8 +5,10 @@ import { useActionState } from "react";
 import { shareMeal } from "@/lib/actions";
 
 function MealsForm() {
-  const [state, formAction, pending] = useActionState(shareMeal, null);
-
+  const [state, formAction, pending] = useActionState(shareMeal, {
+    message: null,
+    values: {},
+  });
   return (
     <form className={classes.form} action={formAction}>
       <div className={classes.row}>
