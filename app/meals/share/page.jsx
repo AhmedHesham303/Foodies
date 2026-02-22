@@ -1,7 +1,5 @@
-import { useFormState } from "react-dom";
 import classes from "./page.module.css";
 import MealsForm from "@/components/meals/MealsForm";
-import { shareMeal } from "@/lib/actions";
 
 export default function ShareMealPage() {
   return (
